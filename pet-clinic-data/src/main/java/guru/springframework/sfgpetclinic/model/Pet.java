@@ -2,32 +2,33 @@ package guru.springframework.sfgpetclinic.model;
 
 import java.time.LocalDate;
 
-public class Pet {
-	private PetType petType;
-	private Owner owner;
-	private LocalDate localDate;
-	
-	public PetType getPetType() {
-		return petType;
-	}
+public class Pet extends BaseEntity {
 
-	public void setPetType(PetType petType) {
-		this.petType = petType;
-	}
+    private PetType petType;
+    private Owner owner;
+    private LocalDate localDate;
 
-	public Owner getOwner() {
-		return owner;
-	}
+    public PetType getPetType() {
+        return petType;
+    }
 
-	public void setOwner(Owner owner) {
-		this.owner = owner;
-	}
+    public void setPetType(PetType petType) {
+        this.petType = petType;
+    }
 
-	public LocalDate getLocalDate() {
-		return localDate;
-	}
+    public Owner getOwner() {
+        return owner;
+    }
 
-	public void setLocalDate(LocalDate localDate) {
-		this.localDate = localDate;
-	}
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
+
+    public LocalDate getLocalDate() {
+        return localDate;
+    }
+
+    public void setLocalDate(LocalDate localDate) {
+        this.localDate = localDate;
+    }
 }
