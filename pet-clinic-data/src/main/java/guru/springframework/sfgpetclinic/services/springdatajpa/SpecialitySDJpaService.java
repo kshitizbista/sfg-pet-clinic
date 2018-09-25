@@ -4,12 +4,12 @@ import guru.springframework.sfgpetclinic.model.Speciality;
 import guru.springframework.sfgpetclinic.repositories.SpecialityRepository;
 import guru.springframework.sfgpetclinic.services.SpecialityService;
 import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Service;
 
-import javax.persistence.Entity;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
+@Service
 @Profile("springdatajpa")
 public class SpecialitySDJpaService implements SpecialityService {
 
