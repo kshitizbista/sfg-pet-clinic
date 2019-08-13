@@ -23,7 +23,7 @@ public class Pet extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "owner_id")
     private Owner owner;
-    private LocalDate birthDay;
+    private LocalDate birthDate;
     private String name;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")

@@ -42,6 +42,10 @@ public class DataLoader implements CommandLineRunner {
         cat.setName("Cat");
         PetType savedCatType = petTypeService.save(cat);
 
+        PetType rabbit = new PetType();
+        rabbit.setName("Rabbit");
+        PetType savedRabbitType = petTypeService.save(rabbit);
+
         Speciality radiology = new Speciality();
         radiology.setDescription("Radiology");
         Speciality savedRadiology = specialityService.save(radiology);
@@ -66,7 +70,7 @@ public class DataLoader implements CommandLineRunner {
         Pet kshitizPet = new Pet();
         kshitizPet.setPetType(savedDogType);
         kshitizPet.setOwner(owner1);
-        kshitizPet.setBirthDay(LocalDate.now());
+        kshitizPet.setBirthDate(LocalDate.now());
         kshitizPet.setName("Rosco");
 
         owner1.getPets().add(kshitizPet);
@@ -81,12 +85,28 @@ public class DataLoader implements CommandLineRunner {
 
         Pet ramCat = new Pet();
         ramCat.setName("Just Cat");
-        ramCat.setBirthDay(LocalDate.now());
+        ramCat.setBirthDate(LocalDate.now());
         ramCat.setPetType(savedCatType);
         ramCat.setOwner(owner2);
 
         owner2.getPets().add(ramCat);
         ownerService.save(owner2);
+
+        Owner owner3 = new Owner();
+        owner3.setFirstName("Sushma");
+        owner3.setLastName("Giri");
+        owner3.setAddress(" ktm");
+        owner3.setCity("Kathmandu");
+        owner3.setTelephone("+911 67098111");
+
+        Pet sushmaRabbit = new Pet();
+        sushmaRabbit.setName("puntu");
+        sushmaRabbit.setBirthDate(LocalDate.now());
+        sushmaRabbit.setPetType(savedRabbitType);
+        sushmaRabbit.setOwner(owner3);
+
+        owner3.getPets().add(sushmaRabbit);
+        ownerService.save(owner3);
 
         System.out.println("Loaded Owners...");
 
