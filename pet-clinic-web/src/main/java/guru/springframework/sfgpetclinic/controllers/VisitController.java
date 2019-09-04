@@ -25,6 +25,12 @@ public class VisitController {
     @InitBinder
     public void dataBinder(WebDataBinder webDataBinder) {
         webDataBinder.setDisallowedFields("id");
+//        dataBinder.registerCustomEditor(LocalDate.class, new PropertyEditorSupport() {
+//            @Override
+//            public void setAsText(String text) throws IllegalArgumentException{
+//                setValue(LocalDate.parse(text));
+//            }
+//        });
     }
 
     /**
